@@ -39,7 +39,7 @@ server.put('/hobbits',(req, res) => {
 // Delete a Hobbit
 server.delete('/hobbits',(req, res) => {
     
-    res.status(204);
+    res.sendStatus(204);
     });
 
 server.listen(8000,() => console.log('API Running on port 8000'));
