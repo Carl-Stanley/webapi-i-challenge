@@ -2,8 +2,18 @@
 const express = require('express');
 
 const server = express();
+// Custom MiddleWare 
 
-const hobbits = [
+function logger(req, res, next) {
+
+    //console.log(`${new.Date().toISOString()}` +  `${req.method}` +  `${req.url}` + `${req.get('Origin')}`)
+    
+};
+
+
+server.use(logger);
+
+let hobbits = [
     {
     id: 1,
     name: 'Samwise Gamgee'
@@ -17,6 +27,8 @@ const hobbits = [
     name: 'Bilbo Baggins'
     }
 ]
+
+let nextID = 4;
 
 //server.use(function(req, res) {
   //  res.status(404).send('Dead End....');
