@@ -22,7 +22,7 @@ server.get('/hobbits',(req, res) => {
         name: 'Bilbo Baggins'
         }
     ]
-    res.send(hobbits);
-});
+    res.status(200).json(hobbits);
+    });
 
 server.listen(8000,() => console.log('API Running on port 8000'));
