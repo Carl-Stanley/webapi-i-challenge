@@ -17,14 +17,17 @@ const hobbits = [
     name: 'Bilbo Baggins'
     }
 ]
+
+server.use(express.json());
+
 server.get('/',(req, res) => {
-    res.send('Hello World!');
+    res.send('Welcome to Hobbiton');
 });
 
 // Get all of the hobbits 
 server.get('/hobbits',(req, res) => {
     
-    res.send('Welcome to Hobbiton');
+    res.send(hobbits);
     });
 // Add a Hobbit
 server.post('/hobbits',(req, res) => {
